@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      nav {
+        display: flex;
+        justify-content: center; /* Center the items */
+        width: 100%; /* Full width */
+        padding: 10px 0;
+      }
+      nav a {
+        margin: 0 15px; /* Space between icons */
+      }
+      .hidden {
+        display: none;
+      }
+      .section {
+        opacity: 0; /* Start with invisible */
+        transition: opacity 0.5s ease; /* Smooth transition for opacity */
+        padding-left: 20px;
+      }
+      .section.visible {
+        opacity: 1; /* Fully visible */
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="flex">
+      <a href="#" onclick="showSection('desc')"
+        ><img src="user.png" width="120" alt=""
+      /></a>
+      <a href="#" onclick="showSection('alamat')"
+        ><img src="home.png" width="120" alt=""
+      /></a>
+      <a href="#" onclick="showSection('piagam')"
+        ><img src="quality.png" width="120" alt=""
+      /></a>
+    </nav>
+    <main class="flex m-7">
+      <div>
+        <div class="w-56 aspect-square">
+          <img
+            class="object-cover w-64 h-full rounded-full hover:shadow-2xl"
+            src="profil ravel.jpeg"
+            alt=""
+          />
+        </div>
+        <div class="m-4">
+          <h1 class="m-4 font-bold text-2xl">Greggorius Ravel Romalo</h1>
+        </div>
+        <div class="flex space-x-3 mt-14">
+          <a href="https://wa.me/62895413323050"
+            ><img class="hover:size-16" src="wa.png" alt=""
+          /></a>
+          <a href="https://instagram.com/rafaellrml_"
+            ><img class="hover:size-16" src="ig.png" alt=""
+          /></a>
+          <a href="mailto:rapelbedes7@google.com"
+            ><img class="hover:size-16" src="gmail.png" alt=""
+          /></a>
+        </div>
+      </div>
+      <div id="desc" class="section hidden">
+        <h2 class="text-2xl font-bold">Tentang saya</h2>
+        <p class="pl-8 font-semibold">
+          Halo! Nama saya Greggorius Ravel Romalo. Saya adalah seorang pelajar
+          di SMK N 8 Semarang, mengambil jurusan Pengembangan Perangkat Lunak
+          dan Gim (PPLG). Selain fokus pada studi, saya memiliki hobi yang
+          sangat saya cintai, yaitu berolahraga dan mendaki gunung. Saya juga
+          aktif dalam kegiatan ekstrakurikuler pramuka, di mana saya telah
+          mendapatkan pengalaman berharga. Salah satu momen paling berkesan
+          dalam perjalanan pramuka saya adalah ketika mengikuti Raimuna Cabang
+          Kota Semarang ke VI. Kegiatan tersebut tidak hanya menguji kemampuan
+          fisik dan mental saya, tetapi juga memperluas jaringan pertemanan dan
+          meningkatkan keterampilan kepemimpinan. Selain itu, saya pernah
+          mengikuti pelatihan Water Rescue di Waduk Jati Barang, di mana saya
+          mendapatkan keterampilan penting dalam penanggulangan bencana air.
+          Pengalaman ini juga membawa saya meraih penghargaan, yang semakin
+          memotivasi saya untuk terus belajar dan berkontribusi dalam kegiatan
+          sosial. Saya percaya bahwa kombinasi antara minat di bidang teknologi,
+          kecintaan terhadap alam, dan pengalaman di lapangan akan membantu saya
+          untuk tumbuh dan berkembang di masa depan. Selalu terbuka untuk
+          belajar dan mengeksplorasi hal baru, saya siap menghadapi tantangan
+          yang ada di depan!
+        </p>
+      </div>
+      <div id="alamat" class="hidden section">
+        <h3 class="text-xl font-bold">Alamat Saya</h3>
+        <ul class="list-disc m-3">
+          <li>
+            KP.BERGOTA 514-C RT 08 / RW 06 KEL.RANDUSARI KEC. SEMARANG SELATAN
+          </li>
+          <li>
+            JL.KINTELAN BARU 25-A RT 05 / RW 02 KEL.BENDUNGAN KEC. GAJAH MUNGKUR
+          </li>
+        </ul>
+      </div>
+      <div id="piagam" class="flex space-x-3 hidden section flex-row">
+        <h2 class="text-2xl font-bold">Piagam saya</h2>
+        <div>
+          <img src="CamScanner 29-10-2024 18.10.jpg" alt="" width="450" />
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function showSection(sectionId) {
+        // Sembunyikan semua bagian
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.remove("visible"); // Hapus kelas visible untuk animasi
+          section.classList.add("hidden"); // Sembunyikan bagian
+        });
+
+        // Tampilkan bagian yang dipilih
+        const selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+          selectedSection.classList.remove("hidden");
+          setTimeout(() => {
+            selectedSection.classList.add("visible"); // Tambahkan kelas visible untuk animasi
+          }, 10); // Delay kecil untuk memastikan animasi berlaku
+        }
+      }
+
+      // Tampilkan bagian pertama secara default
+      showSection();
+    </script>
+  </body>
+</html>
